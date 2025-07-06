@@ -5,12 +5,12 @@ from mysql.connector import Error
 def create_database():
     # --- Configuration: for my MySQL Server ---
     db_config = {
-        'host': 'localhost',  '
-        'user': 'root',  
-        'password': 'Password@1234', 
-        'port': 3306  
+        'host': 'localhost',
+        'user': 'root',
+        'password': 'Password@1234',
+        'port': 3306
     }
-    
+
     connection = None
     cursor = None
 
@@ -37,7 +37,7 @@ def create_database():
         else:
             print("Failed to connect to MySQL Server.")
 
-    except Error as e:
+    except mysql.connector.Error as e:
         # Handle specific connection errors
         if e.errno == mysql.connector.errorcode.ER_ACCESS_DENIED_ERROR:
             print("Error: Access denied. Check your username and password.")
