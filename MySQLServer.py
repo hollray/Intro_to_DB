@@ -10,7 +10,7 @@ def create_database():
         'password': 'Password@1234', 
         'port': 3306  
     }
-    database_name = "alx_book_store"
+    
     connection = None
     cursor = None
 
@@ -30,10 +30,10 @@ def create_database():
 
             # SQL query to create the database if it doesn't exist
             # Using IF NOT EXISTS ensures the script doesn't fail if the DB exists
-            create_db_query = f"CREATE DATABASE IF NOT EXISTS {database_name}"
+            create_db_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
 
             cursor.execute(create_db_query)
-            print(f"Database '{database_name}' created successfully!")
+            print(f"Database 'alx_book_store' created successfully!")
         else:
             print("Failed to connect to MySQL Server.")
 
